@@ -13,9 +13,11 @@
       "default",
       {
         "ignore": [
-          "height: fit-content"
+          "height: fit-content",
+          "backdrop-filter"
         ]
       }
-    ]
+    ],
+    "no-inline-styles": "off"
   }
 }

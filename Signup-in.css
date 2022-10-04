@@ -32,6 +32,61 @@ section {
     box-shadow: 0 25px 45px rgba(0,0,0,0.1);
 }
 
+.square {
+    position: absolute;
+    backdrop-filter: blur(5px);
+    background: rgba(255, 255, 255, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: 50%;
+    animation: animate 5s linear infinite;
+    animation-delay: calc(-1s * var(--i));
+}
+
+@keyframes animate {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(0);
+    }
+}
+
+.square:nth-child(1) {
+    width: 100px;
+    height: 100px;
+    left: 450px;
+    bottom: 200px;
+}
+
+.square:nth-child(2) {
+    width: 100px;
+    height: 100px;
+    right: 550px;
+    top: 150px;
+}
+
+.square:nth-child(3) {
+    width: 150px;
+    height: 150px;
+    top: 120px;
+    left: 400px;
+    z-index: 2;
+}
+
+.square:nth-child(4) {
+    width: 150px;
+    height: 150px;
+    bottom: 90px;
+    right: 550px;
+    z-index: 2;
+}
+
+.square:nth-child(5) {
+    width: 100px;
+    height: 100px;
+    right: 450px;
+}
+
 .form {
     position: relative;
     width: 100%;
