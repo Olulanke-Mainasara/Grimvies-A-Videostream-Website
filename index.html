@@ -12,9 +12,13 @@
     <script src="https://kit.fontawesome.com/aae4243485.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    <main>
-        <nav>
-            <img src="Images/My Brand 1.png" alt="My Brand">
+    <main id="main">
+        <nav id="sidemenu">
+            <div id="listndbrand">
+                <i class="fa-solid fa-list" id="openm"></i>
+                <img src="Images/Grimvies logo 2.png" alt="My Brand">
+                <i class="fa-solid fa-xmark" id="closem" onclick="closemenu()"></i>
+            </div>
 
             <ul id="mainnav">
                 <li><a href="index.html"><i class="fa-solid fa-house"></i> Home</a></li>
@@ -23,6 +27,8 @@
                 <li><a href="index.html"><i class="fa-solid fa-users"></i> Subscriptions</a></li>
             </ul>
 
+            <hr>
+
             <ul id="sidenav">
                 <li><a href="Library.html"><i class="fa-solid fa-photo-film"></i> Library</a></li>
                 <li><a href="History.html"><i class="fa-solid fa-clock-rotate-left"></i> History</a></li>
@@ -30,17 +36,70 @@
                 <li><a href="LikedV.html"><i class="fa-solid fa-thumbs-up"></i> Liked videos</a></li>
             </ul>
 
-            <div id="socials">
-                <a href="#"><i class="fa-brands fa-facebook"></i></a>
-                <a href="#"><i class="fa-brands fa-square-twitter"></i></a>
-                <a href="#"><i class="fa-brands fa-instagram"></i></a>
-                <a href="#"><i class="fa-brands fa-linkedin"></i></a>
-            </div>
-
-            <div id="copyright">
-                <p>Copyright <i class="fa-regular fa-copyright"></i> Grim_redd.</p>
+            <div id="others">
+                <div id="socials">
+                    <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="#"><i class="fa-brands fa-square-twitter"></i></a>
+                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+                </div>
+    
+                <div id="copyright">
+                    <p>Copyright <i class="fa-regular fa-copyright"></i> Grim_redd.</p>
+                </div>
             </div>
         </nav>
+
+        <div class="container">
+            <header>
+                <section id="searchndlog">
+                    <i class="fa-solid fa-list" id="mopenm" onclick="openmenu()"></i>
+
+                    <form action="">
+                        <input type="text" name="search" placeholder="Search...">
+                        <input type="submit" name="subsearch" value="Search">
+                    </form>
+
+                    <div id="logs">
+                        <a href="Signin.html" class="selection"><i class="fa-solid fa-door-open"></i> Sign-in</a>
+                        <i class="fa-solid fa-user" id="logselect" onclick="openselect()"></i>
+                        <a href="Signup.html" class="selection"><i class="fa-solid fa-clipboard"></i> Sign-up</a>
+                    </div>
+                </section>
+            </header>
+        </div>
+
+        <div id="lognav">
+            <ul>
+                <li><a href="index.html"><i class="fa-solid fa-house"></i> Home</a></li>
+                <li><a href="index.html"><i class="fa-regular fa-compass"></i> Explore</a></li>
+                <li><a href="index.html"><i class="fa-solid fa-arrow-down-short-wide"></i> Shorts</a></li>
+                <li><a href="index.html"><i class="fa-solid fa-users"></i> Subscriptions</a></li>
+            </ul>
+        </div>
     </main>
+
+
+
+    <script>
+        var sidemenu = document.getElementById("sidemenu");
+
+        function openmenu(){
+            sidemenu.style.left = "0";
+        }
+
+        function closemenu(){
+            sidemenu.style.left = "-200px";
+        }
+    </script>
+
+    <script>
+        var selection = document.getElementsByClassName("selection");
+
+        function openselect(){
+            selection.style.opacity = 1;
+        }
+    </script>
+
 </body>
 </html>
