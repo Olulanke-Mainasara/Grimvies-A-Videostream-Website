@@ -132,12 +132,16 @@ nav i {
     height: 100vh;
 }
 
+/*-------------------------Header section-------------------------*/
+
 header {
-    height: 50vh;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+    height: 55vh;
+    border-bottom: 1px solid gray;
 }
 
 #searchndlog {
+    position: fixed;
+    width: 100%;
     display: flex;
     flex-wrap: wrap;
     align-items: center;
@@ -145,6 +149,9 @@ header {
     padding: 0 20px;
     height: 110px;
     background: rgba(255, 255, 255, 0.1);
+    -webkit-backdrop-filter: blur(20px);
+    backdrop-filter: blur(20px);
+    z-index: 10;
 }
 
 #searchndlog i {
@@ -234,15 +241,119 @@ header {
     color: #ff004f;
 }
 
+#testimg {
+    width: 100%;
+}
+
+/*-------------------------The Main Body section-------------------------*/
+
+#mainbody {
+    padding: 50px 20px;
+}
+
+#thumbcontainer {
+    position: relative;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-gap: 70px;
+}
+
+.thumbnail {
+    width: 300px;
+    height: fit-content;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: 15px;
+    background: rgba(255, 255, 255, 0.1);
+    transition: transform 0.9s;
+}
+
+.thumbimg {
+    width: 100%;
+    height: 200px;
+    position: relative;
+    border-radius: 15px;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+}
+
+.description {
+    margin: 10px 10px;
+    display: flex;
+}
+
+.description img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+.thumbtext {
+    margin-left: 20px;
+    padding-top: 10px;
+}
+
+.thumbtext p {
+    color: white;
+}
+
+.extrad {
+    font-size: 12px;
+}
+
+.extraoptions {
+    margin: auto;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;    
+    padding-bottom: 10px;
+    opacity: 0.1;
+    transition: opacity 0.5s;
+}
+
+.extraoptions div {
+    width: fit-content;
+    text-align: center;
+    padding: 10px;
+    margin: 10px 10px;
+    border: 1px solid #ff004f;
+    border-radius: 15px;
+}
+
+.thumbnail:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+.thumbnail:hover .extraoptions {
+    opacity: 1;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /*-------------------------Responsiveness for mobile-------------------------*/
 
 @media only screen and (max-width: 950px) {
     nav {
-        background: #ff004f;
+        background: rgba(255, 255, 255, 0.1);
+        -webkit-backdrop-filter: blur(20px);
+        backdrop-filter: blur(20px);        
         left: -200px;
         width: 200px;
-        z-index: 2;
+        z-index: 99;
         transition: left 0.5s;
     }
 
@@ -252,7 +363,7 @@ header {
 
     nav li a i {
         display: block;
-        color: white;
+        color: #ff004f;
     }
 
     nav img {
@@ -260,7 +371,7 @@ header {
     }
 
     nav i {
-        color: white;
+        color: #ff004f;
     }
 
     nav li a:hover::after {
@@ -353,5 +464,9 @@ header {
     #lognav a {
         color: white;
         text-decoration: none;
+    }
+
+    .thumbnail {
+        margin: 10px auto;
     }
 }
