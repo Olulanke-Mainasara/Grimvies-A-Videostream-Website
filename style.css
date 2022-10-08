@@ -283,6 +283,11 @@ header {
     transition: color 0.5s, background 0.5s;
 }
 
+#headerbtn:hover {
+    background: white;
+    color: #ff004f;
+}
+
 #headerbtn i {
     color: #ff004f;
 }
