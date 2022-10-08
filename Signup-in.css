@@ -6,7 +6,7 @@
 }
 
 body {
-    background: linear-gradient(45deg, blue, #ff004f);    
+    background: linear-gradient(45deg, black 50%, #ff004f);    
     height: 100vh;
 }
 
@@ -25,18 +25,22 @@ section {
     color: white;
     width: 400px;
     height: 420px;
-    border: 1px solid rgba(255, 255, 255, 0.5);
+    border: 1px solid #ff004f;
     border-radius: 15px;
     background: rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(5px);
     box-shadow: 0 25px 45px rgba(0,0,0,0.1);
 }
 
+#signupform {
+    height: 450px;
+}
+
 .square {
     position: absolute;
     backdrop-filter: blur(5px);
-    background: rgba(255, 255, 255, 0.3);
-    border: 1px solid rgba(255, 255, 255, 0.5);
+    background: rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 50%;
     animation: animate 5s linear infinite;
     animation-delay: calc(-1s * var(--i));
@@ -126,7 +130,8 @@ input[type="submit"] {
 }
 
 input[type="submit"]:hover {
-    background-color: black;
+    border: 1px solid #ff004f;
+    background-color: rgba(255, 255, 255, 0.2);
     color: white;
     cursor: pointer;
 }
@@ -146,7 +151,8 @@ input[type="submit"]:hover {
 }
 
 .homebtn:hover {
-    background: black;
+    border: 1px solid #ff004f;
+    background: rgba(255, 255, 255, 0.2);
     color: white;
 }
 
@@ -161,7 +167,7 @@ input[type="submit"]:hover {
 }
 
 .resetpass a:hover, .createacc a:hover {
-    color: black;
+    color: #ff004f;
 }
 
 @media only screen and (max-width: 800px) {
