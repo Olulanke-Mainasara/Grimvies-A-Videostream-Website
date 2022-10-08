@@ -113,28 +113,6 @@ nav i {
     color: #ff004f;
 }
 
-#socials {
-    font-size: 25px;
-}
-
-#socials a i {
-    transition: color 0.5s, transform 0.5s;
-    margin: 0 5px;
-}
-
-#socials a:hover i {
-    color: white;
-    transform: translateY(-5px);
-}
-
-#copyright {
-    margin-top: 30px;
-}
-
-#copyright p {
-    color: white;
-}
-
 /*-------------------------The Main section-------------------------*/
 
 .container {
@@ -144,9 +122,13 @@ nav i {
 
 /*-------------------------Header section-------------------------*/
 
-header {
-    height: 55vh;
+#scroll {
+    width: 100%;
+    top: 110px;
+    background: url(Images/header.jpeg);
+    background-size: cover;
     border-bottom: 1px solid gray;
+    height: 60vh;
 }
 
 #searchndlog {
@@ -344,6 +326,10 @@ header {
     opacity: 1;
 }
 
+#footerm {
+    display: none;
+}
+
 
 
 
@@ -392,17 +378,17 @@ header {
         display: none;
     }
 
+    #others {
+        display: none;
+    }
+
     #closemenud {
         display: none;
     }
 
     #closem {
         display: block;
-        margin: 30px 0;
-    }
-
-    #mopenm {
-        margin-left: 20px;
+        margin: 40px 0;
     }
 
     #mopenm:hover {
@@ -482,5 +468,43 @@ header {
 
     .thumbnail {
         margin: 30px auto;
+    }
+
+    #footerm {
+        display: block;
+        width: 100%;
+        background: rgba(255, 255, 255, 0.1);
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        align-items: center;
+        padding: 20px 0;
+    }
+
+    #socials {
+        font-size: 25px;
+    }
+    
+    #socials a i {
+        color: #ff004f;
+        transition: color 0.5s, transform 0.5s;
+        margin: 0 20px;
+    }
+    
+    #socials a:hover i {
+        color: white;
+        transform: translateY(-5px);
+    }
+    
+    #copyright {
+        margin-top: 30px;
+    }
+    
+    #copyright p {
+        color: white;
+    }
+
+    #copyright p i {
+        color: #ff004f;
     }
 }
