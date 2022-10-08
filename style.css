@@ -360,7 +360,7 @@ header {
 
 /*-------------------------Responsiveness for mobile-------------------------*/
 
-@media only screen and (max-width: 950px) {
+@media only screen and (max-width: 1050px) {
     nav {
         background: rgba(255, 255, 255, 0.1);
         -webkit-backdrop-filter: blur(20px);
@@ -481,6 +481,6 @@ header {
     }
 
     .thumbnail {
-        margin: 10px auto;
+        margin: 30px auto;
     }
 }
