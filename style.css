@@ -233,11 +233,6 @@ nav i {
     transition: background 0.5s;
 }
 
-#logselect:hover {
-    background: white;
-    cursor: pointer;
-}
-
 .selection {
     text-decoration: none;
     color: white;
