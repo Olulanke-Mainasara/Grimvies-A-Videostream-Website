@@ -186,32 +186,46 @@ nav i {
 
 #searchndlog form {
     display: flex;
+    align-items: center;
+    gap: 13px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid #ff004f;
+    border-radius: 15px;
+    color: white;
+    padding-left: 15px;
+}
+
+#searchndlog form button {
+    background: none;
+    border: none;
+}
+
+#searchndlog form button i {
+    transition: color 0.5s;
+}
+
+#searchndlog form button:hover i {
+    cursor: pointer;
+    color: white;
 }
 
 #searchndlog input {
     width: 400px;
     height: 45px;
-    padding: 10px 15px;
-    font-size: 15px;
-    background: rgba(255, 255, 255, 0.1);
-    border: 1px solid #ff004f;
+    font-size: 17px;
     border-radius: 15px;
+    background: transparent;
+    border: none;
+    border-left: 1px solid rgba(255, 255, 255, 0.5);
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    padding-left: 15px;
     color: white;
 }
 
 #searchndlog input::placeholder {
     color: white;
-}
-
-#searchndlog input[type="submit"] {
-    width: 100px;
-    transition: color 0.5s, background 0.5s;
-}
-
-#searchndlog input[type="submit"]:hover {
-    background: white;
-    color: #ff004f;
-    cursor: pointer;
+    font-size: 17px;
 }
 
 #logs {
@@ -229,8 +243,13 @@ nav i {
     margin: 0 20px;
     padding: 10px;
     border-radius: 50%;
+    cursor: pointer;
     border: 1px solid rgba(255, 255, 255, 0.5);
     transition: background 0.5s;
+}
+
+#logselect:hover {
+    background: white;
 }
 
 .selection {
@@ -239,7 +258,8 @@ nav i {
     border: 1px solid #ff004f;
     padding: 10px 15px;
     border-radius: 15px;
-    transition: color 0.5s, background 0.5s;
+    opacity: 0;
+    transition: color 0.5s, background 0.5s, opacity 0.5s;
 }
 
 .selection:hover {
@@ -250,27 +270,87 @@ nav i {
 /*-------------------------Header section-------------------------*/
 
 header {
-    margin-top: 110px;
-    width: 100%;
-    background: url(Images/header.jpeg);
-    background-size: cover;
+ overflow: hidden;   
+}
+
+#scrollhandler {
+    width: 100vw;
+    position: relative;
+    margin: 110px auto 0;
+}
+
+.header {
+    width: 100vw;
     border-bottom: 1px solid gray;
     height: 60vh;
-    display: flex;
-    align-items: center;
+    display: none;
+    -webkit-animation: fade-image 5s;
+    animation: fade-image 5s;
+}
+
+.dot 
+{
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: transparent;
+  border-color: #ddd;
+  border-width: 5 px;
+  border-style: solid;
+  border-radius: 50%;
+  display: inline-block;
+  transition: border-color 0.6s ease;
+}
+  
+.active 
+{
+  border-color: #666;
+}
+
+@-webkit-keyframes fade-image
+{
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+  
+@keyframes fade-image
+{
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+.header:nth-child(1) {
+    background: url(Images/header.jpeg);
+    background-size: cover;
+    color: white;
+    font-size: 40px;
+}
+
+.header:nth-child(2) {
+    background: url(Images/header2.png);
+    background-size: auto;
+    color: black;
+    font-size: 40px;
+}
+
+.header:nth-child(2) #headerbtn {
+    color: black;
+}
+
+.header:nth-child(3) {
+    background: url(Images/header.jpeg);
+    background-size: cover;
+    color: white;
+    font-size: 40px;
 }
 
 #scroll {
     margin-left: 30px;
     padding: 20px;
-    position: relative;
+    position: absolute;
+    top: 20%;
     width: 50%;
     line-height: 80px;
-}
-
-#scroll h1 {
-    color: white;
-    font-size: 40px;
 }
 
 #headerbtn {
@@ -448,11 +528,7 @@ header {
     }
 
     #searchndlog input {
-        width: 200px;
-    }
-
-    #searchndlog input[type="submit"] {
-        display: none;
+        width: 150px;
     }
 
     #logselect {
@@ -467,9 +543,8 @@ header {
         display: none;
     }
 
-    header {
+    #scrollhandler {
         margin-top: 80px;
-        background: url(Images/header.jpeg);
     }
 
     #scroll {
