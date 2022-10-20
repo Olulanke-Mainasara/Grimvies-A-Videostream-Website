@@ -270,7 +270,7 @@ nav i {
 /*-------------------------Header section-------------------------*/
 
 header {
- overflow: hidden;   
+    overflow: hidden;   
 }
 
 #scrollhandler {
@@ -285,7 +285,7 @@ header {
     height: 60vh;
     display: none;
     -webkit-animation: fade-image 5s;
-    animation: fade-image 5s;
+    animation: fade-image 15s;
 }
 
 .dot 
