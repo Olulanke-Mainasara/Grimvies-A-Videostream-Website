@@ -12,7 +12,6 @@
 
     <script src="https://cdn.rawgit.com/michalsnik/aos/2.1.1/dist/aos.js"></script>
     <script src="https://kit.fontawesome.com/aae4243485.js" crossorigin="anonymous"></script>
-    <script src="script.js"></script>
 </head>
 <body>
     <main id="main">
@@ -73,32 +72,34 @@
                 </div>
             </div>
 
-            <header>
-                <div id="scrollhandler">
-                    <div class="header">
+            <header id="slider">
+                <ul id="slideWrap">
+                    <li class="slider-page">
                         <section id="scroll">
-                            <h1>Listen Ad-free with music. 1<br>Premium</h1>
+                            <h1>Listen Ad-free with music.<br>Premium</h1>
                             <a href="Signup.html" id="headerbtn"><i class="fa-solid fa-clipboard"></i> 1 Month Free</a>
                         </section>
-                    </div>
+                    </li>
     
-                    <div class="header">
+                    <li class="slider-page">
                         <section id="scroll">
-                            <h1>Listen Ad-free with music. 2<br>Premium</h1>
+                            <h1>Get more from your favorite creator.<br>Premium</h1>
                             <a href="Signup.html" id="headerbtn"><i class="fa-solid fa-clipboard"></i> 1 Month Free</a>
                         </section>
-                    </div>
+                    </li>
                     
-                    <div class="header">
+                    <li class="slider-page">
                         <section id="scroll">
-                            <h1>Listen Ad-free with music. 3<br>Premium</h1>
+                            <h1>Great value by sharing.<br>Premium</h1>
                             <a href="Signup.html" id="headerbtn"><i class="fa-solid fa-clipboard"></i> 1 Month Free</a>
                         </section>
-                    </div>
-                </div>
-                <br>
+                    </li>
+                </ul>
 
-                <div style="text-align:center">
+                <a id="prev" href="#"><i class="fa-solid fa-chevron-left"></i></a>
+                <a id="next" href="#"><i class="fa-solid fa-chevron-right"></i></a>
+
+                <div class="dots">
                     <span class="dot"></span> 
                     <span class="dot"></span> 
                     <span class="dot"></span> 
@@ -519,37 +520,65 @@
         /*-----------------------Script for automating the carousel------------------------*/
 
         var slideIndex = 0;
-        showslides();
 
-        function showslides() {
-            var i;
-            var pages = document.getElementsByClassName("header");
-            var dots = document.getElementsByClassName("dot"); 
+        responsiveSlider()
 
-            for (i = 0; i < pages.length; i++) {
-                pages[i].style.display = "none";
-            }
+        function responsiveSlider() {
 
-            slideIndex++;
+        var slider = document.getElementById("slider");
+        var sliderWidth = slider.offsetWidth;
+        var slideList = document.getElementById("slideWrap");
+        var count = 1;
+        var items = slideList.querySelectorAll("li").length;
+        var dots = document.querySelectorAll(".dot"); 
+        var prev = document.getElementById("prev");
+        var next = document.getElementById("next");
 
-            if (slideIndex > pages.length) {
-                slideIndex = 1;
-            }
+        window.addEventListener('resize', function() {
+        sliderWidth = slider.offsetWidth;
+        });
 
-            for (i = 0; i < dots.length; i++) {
-                dots[i].className = dots[i].className.replace(" active", "");
-            }
-   
-            pages[slideIndex - 1].style.display = "block";
-            dots[slideIndex - 1].className += " active";
+        var prevSlide = function() {
+        if(count > 1) {
+            count = count - 2;
+            slideList.style.left = "-" + count * sliderWidth + "px";
+            count++;
+        }
 
-            setTimeout(showslides, 15000); 
+        else if(count = 1) {
+            count = items - 1;
+            slideList.style.left = "-" + count * sliderWidth + "px";
+            count++;
+        }
+        };
+
+        var nextSlide = function() {
+        if(count < items) {
+            slideList.style.left = "-" + count * sliderWidth + "px";
+            count++;
+        }
+        else if(count = items) {
+            slideList.style.left = "0px";
+            count = 1;
+        }
+        };
+
+        next.addEventListener("click", function() {
+            nextSlide();
+        });
+
+        prev.addEventListener("click", function() {
+            prevSlide();
+        });
+
+        setInterval(nextSlide, 8000);
         }
         
         /*-----------------------Script for the animations on scroll for mobile------------------------*/
 
         if(window.innerWidth <= 500){
             mobilescroll();
+            logselect.setAttribute("href", "Signin.html");
         }
 
         var thumbnail = document.querySelectorAll(".thumbnail");
