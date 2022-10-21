@@ -585,7 +585,7 @@ header #prev:hover, header #next:hover {
     }
 
     header #prev:hover, header #next:hover {
-        background: none;
+        background: black;
     }
 
     .slider-page:nth-child(1) {
