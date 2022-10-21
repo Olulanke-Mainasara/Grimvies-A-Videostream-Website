@@ -40,7 +40,7 @@
 
             <div id="others">
                 <div id="socials">
-                    <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="#"><i class="fa-brands fa-github"></i></a>
                     <a href="#"><i class="fa-brands fa-square-twitter"></i></a>
                     <a href="#"><i class="fa-brands fa-instagram"></i></a>
                     <a href="#"><i class="fa-brands fa-linkedin"></i></a>
@@ -55,8 +55,8 @@
         <section class="container">
             <div id="searchndlog">
                 <i class="fa-solid fa-list" id="mopenm" onclick="openmenu()"></i>
-                <i class="fa-solid fa-video"></i>
-                <a href="index.html"><img id="brandlogo" src="Images/Grimvies logo 2.png" alt="My Brand"></a>
+                <i class="fa-solid fa-video" id="mobilelogo"></i>
+                <a href="index.html" id="logo">Grimvies<i class="fa-solid fa-video"></i></a>
 
                 <form action="">
                     <button type="submit">
@@ -67,7 +67,7 @@
 
                 <div id="logs">
                     <a href="Signin.html" class="selection"><i class="fa-solid fa-door-open"></i> Sign-in</a>
-                    <i class="fa-solid fa-user" id="logselect" onclick="openselect()"></i>
+                    <a href="#" id="logselectlink"><i class="fa-solid fa-user" id="logselect" onclick="openselect()"></i></a>
                     <a href="Signup.html" class="selection"><i class="fa-solid fa-clipboard"></i> Sign-up</a>
                 </div>
             </div>
@@ -83,7 +83,7 @@
     
                     <li class="slider-page">
                         <section id="scroll">
-                            <h1>Get more from your favorite creator.<br>Premium</h1>
+                            <h1>Get more from your favorite creator.<br><span id="premium">Premium</span></h1>
                             <a href="Signup.html" id="headerbtn"><i class="fa-solid fa-clipboard"></i> 1 Month Free</a>
                         </section>
                     </li>
@@ -464,7 +464,7 @@
 
             <div id="footerm">
                 <div id="socials">
-                    <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="#"><i class="fa-brands fa-github"></i></a>
                     <a href="#"><i class="fa-brands fa-square-twitter"></i></a>
                     <a href="#"><i class="fa-brands fa-instagram"></i></a>
                     <a href="#"><i class="fa-brands fa-linkedin"></i></a>
@@ -483,7 +483,7 @@
         /*-----------------------Script for basic operations on load------------------------*/
 
         AOS.init();
-
+        
         if(window.innerHeight < 600){
             alert("View in Portrait mode for the best experience!");
         }
@@ -517,9 +517,25 @@
             logselect.style.cursor = "auto";
         }
 
-        /*-----------------------Script for automating the carousel------------------------*/
+        /*-----------------------Script for the animations on scroll for mobile------------------------*/
 
-        var slideIndex = 0;
+        var logselectlink = document.getElementById("logselectlink");
+
+        if(window.innerWidth <= 500){
+            logselectlink.setAttribute("href", "Signin.html");
+
+            var thumbnail = document.querySelectorAll(".thumbnail");
+            var thumbList = thumbnail.length
+            var extraoptions = document.querySelectorAll(".extraoptions");
+
+            for(var i = 0; i < thumbList; i++) {
+                thumbnail[i].setAttribute("data-aos", "fade-right");
+                thumbnail[i].setAttribute("data-aos-duration", "500");
+                extraoptions[i].style.opacity = 1;   
+            }
+        }
+
+        /*-----------------------Script for automating the carousel------------------------*/
 
         responsiveSlider()
 
@@ -572,24 +588,6 @@
         });
 
         setInterval(nextSlide, 8000);
-        }
-        
-        /*-----------------------Script for the animations on scroll for mobile------------------------*/
-
-        if(window.innerWidth <= 500){
-            mobilescroll();
-            logselect.setAttribute("href", "Signin.html");
-        }
-
-        var thumbnail = document.querySelectorAll(".thumbnail");
-        var extraoptions = document.querySelectorAll(".extraoptions");
-
-        function mobilescroll(){
-            for(var i = 0; i < thumbnail.length; i++) {
-                thumbnail[i].setAttribute("data-aos", "fade-right");
-                thumbnail[i].setAttribute("data-aos-duration", "500");
-                extraoptions[i].style.opacity = 1;   
-            }
         }
     </script>
 </body>

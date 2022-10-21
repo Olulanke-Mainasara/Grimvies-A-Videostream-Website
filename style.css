@@ -175,13 +175,19 @@ nav i {
     cursor: pointer;
 }
 
-#searchndlog .fa-video {
+#mobilelogo {
     display: none;
 }
 
-#searchndlog img {
-    width: 200px;
-    height: 110px;
+#logo {
+    text-decoration: none;
+    color: #ff004f;
+    font-size: 33px;
+}
+
+#logo i {
+    color: white;
+    font-size: 30px;
 }
 
 #searchndlog form {
@@ -376,7 +382,7 @@ header #prev:hover, header #next:hover {
     padding: 20px;
     position: absolute;
     top: 20%;
-    width: 50%;
+    width: 60%;
     line-height: 80px;
 }
 
@@ -545,11 +551,11 @@ header #prev:hover, header #next:hover {
     }
 
     #searchndlog .fa-video {
-        display: block;
         color: white;
+        display: block;
     }
 
-    #searchndlog img {
+    #logo {
         display: none;
     }
 
@@ -582,9 +588,28 @@ header #prev:hover, header #next:hover {
         background: none;
     }
 
+    .slider-page:nth-child(1) {
+        background: url(Images/header1red.jpg);
+        background-size: cover;
+    }
+    
+    .slider-page:nth-child(2) {
+        background: url(Images/header3red.jpg);
+        background-size: cover;
+    }
+
+    .slider-page:nth-child(3) {
+        background: url(Images/header4red.jpg);
+        background-size: cover;
+    }
+
     #scroll {
         top: 30%;
         width: 100%;
+    }
+
+    #premium {
+        display: none;
     }
     
     .thumbnail {
