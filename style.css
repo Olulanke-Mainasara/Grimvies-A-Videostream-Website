@@ -305,6 +305,10 @@ header #next {
     right: 10px;
 }
   
+header #prev:hover, header #next:hover {
+    background-color: black;
+}
+
 #slideWrap {
     position: relative;
     width: 10000%;
@@ -400,7 +404,7 @@ header #next {
 
 .slider-page:nth-child(2) #headerbtn:hover {
     background: black;
-    color: #ff004f;
+    color: white;
 }
 
 #headerbtn i {
@@ -649,6 +653,14 @@ header #next {
 
     #scroll {
         top: 5%;
+    }
+
+    #scroll h1 {
+        font-size: 20px;
+    }
+
+    #headerbtn {
+        font-size: 15px;
     }
 
     #searchndlog input {
