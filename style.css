@@ -154,7 +154,7 @@ nav i {
     align-items: center;
     justify-content: space-between;
     padding: 0 20px;
-    height: 110px;
+    height: 70px;
     background: rgba(255, 255, 255, 0.1);
     -webkit-backdrop-filter: blur(20px);
     backdrop-filter: blur(20px);
@@ -280,7 +280,7 @@ header {
     height: 60vh;
     overflow: hidden;
     position: relative;
-    margin: 110px auto 0;
+    margin: 70px auto 0;
 }
 
 header #prev, header #next {
@@ -288,6 +288,7 @@ header #prev, header #next {
     line-height: 50px;
     text-align: center;
     color: white;
+    background-color: rgba(0, 0, 0, 0.5);
     text-decoration: none;
     position: absolute;
     top: 43%;
@@ -304,10 +305,6 @@ header #next {
     right: 10px;
 }
   
-header #prev:hover, header #next:hover {
-    background-color: rgba(0, 0, 0, 0.5);
-}
-
 #slideWrap {
     position: relative;
     width: 10000%;
@@ -398,6 +395,11 @@ header #prev:hover, header #next:hover {
 
 #headerbtn:hover {
     background: white;
+    color: #ff004f;
+}
+
+.slider-page:nth-child(2) #headerbtn:hover {
+    background: black;
     color: #ff004f;
 }
 
