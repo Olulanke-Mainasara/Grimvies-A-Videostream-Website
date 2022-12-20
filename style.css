@@ -465,9 +465,9 @@ header #prev:hover, header #next:hover {
     margin: auto;
     color: white;
     display: flex;
-    flex-direction: column;
+    justify-content: center;
     align-items: center;    
-    padding-bottom: 10px;
+    padding-bottom: 15px;
     opacity: 0.1;
     transition: opacity 0.5s;
 }
@@ -560,7 +560,7 @@ header #prev:hover, header #next:hover {
     }
 
     #searchndlog input {
-        width: 150px;
+        width: 250px;
     }
 
     #logselect {
@@ -647,5 +647,9 @@ header #prev:hover, header #next:hover {
 
     #scroll {
         top: 5%;
+    }
+
+    #searchndlog input {
+        width: 150px;
     }
 }
